@@ -1,4 +1,3 @@
-### **2️⃣ retrieve.md**
 
 ```markdown
 # Retrieve a Book
