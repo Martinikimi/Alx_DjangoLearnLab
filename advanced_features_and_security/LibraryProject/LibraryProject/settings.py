@@ -81,4 +81,21 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "bookshelf.CustomUser"
 
 
+# ✅ Security configurations
+
+# Prevent MIME-type sniffing
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# Enable browser XSS filter
+SECURE_BROWSER_XSS_FILTER = True
+
+# Protect against clickjacking
+X_FRAME_OPTIONS = "DENY"
+
+# Use secure cookies (HTTPS only)
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+
+
 
