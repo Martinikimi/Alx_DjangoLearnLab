@@ -124,5 +124,12 @@ SECURE_BROWSER_XSS_FILTER = True     # Enables the browser's XSS filter to preve
 # - These settings improve security for production; during local development you might want to temporarily disable SECURE_SSL_REDIRECT
 # - Review all security-related settings periodically and test using tools like Mozilla Observatory or securityheaders.com
 # =====================
+# =====================
+# Proxy SSL Header (for deployments behind a reverse proxy)
+# =====================
+# This tells Django to trust the 'X-Forwarded-Proto' header sent by the proxy
+# so that it knows if the request was originally HTTPS.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 
