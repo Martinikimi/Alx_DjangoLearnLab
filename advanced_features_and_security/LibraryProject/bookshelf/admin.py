@@ -20,3 +20,24 @@ class CustomUserAdmin(UserAdmin):
     ordering = ["email"]
 
 admin.site.register(CustomUser, CustomUserAdmin)
+
+
+
+
+
+
+
+from django.contrib import admin
+from .models import CustomUser, Book
+from django.contrib.auth.admin import UserAdmin
+
+
+@admin.register(CustomUser)
+class CustomUserAdmin(UserAdmin):
+    pass
+
+
+@admin.register(Book)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ("title", "author", "published_date")
+
