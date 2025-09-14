@@ -97,5 +97,32 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 
+# =====================
+# Security Settings
+# =====================
+
+# Redirect all HTTP requests to HTTPS
+SECURE_SSL_REDIRECT = True  # Ensures that any non-HTTPS request is automatically redirected to HTTPS
+
+# HTTP Strict Transport Security (HSTS)
+SECURE_HSTS_SECONDS = 31536000  # One year in seconds; browsers will only use HTTPS for this site
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply HSTS policy to all subdomains
+SECURE_HSTS_PRELOAD = True  # Allow the site to be included in browser preload lists for HSTS
+
+# Secure Cookies
+SESSION_COOKIE_SECURE = True  # Ensures session cookies are only sent over HTTPS
+CSRF_COOKIE_SECURE = True     # Ensures CSRF cookies are only sent over HTTPS
+
+# Secure Headers
+X_FRAME_OPTIONS = "DENY"          # Prevents clickjacking by disallowing the site to be framed
+SECURE_CONTENT_TYPE_NOSNIFF = True  # Prevents browsers from MIME-sniffing responses away from the declared content type
+SECURE_BROWSER_XSS_FILTER = True     # Enables the browser's XSS filter to prevent cross-site scripting attacks
+
+# =====================
+# Notes:
+# - Make sure your deployment server has SSL/TLS certificates properly configured (e.g., via Let's Encrypt or commercial certs)
+# - These settings improve security for production; during local development you might want to temporarily disable SECURE_SSL_REDIRECT
+# - Review all security-related settings periodically and test using tools like Mozilla Observatory or securityheaders.com
+# =====================
 
 
