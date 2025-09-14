@@ -55,6 +55,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'LibraryProject.wsgi.application'
 
 
+# Default primary key field type
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ✅ Custom user model
+AUTH_USER_MODEL = "bookshelf.CustomUser"
+
+
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 DATABASES = {
