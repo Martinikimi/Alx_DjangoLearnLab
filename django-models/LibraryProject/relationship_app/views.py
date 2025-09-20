@@ -85,4 +85,22 @@ def delete_book(request, pk):
         book.delete()
         return redirect('book-list')
     return render(request, 'relationship_app/book_confirm_delete.html', {'book': book})
+from django.contrib.auth.decorators import permission_required
+
+@permission_required('relationship_app.can_add_book')
+def add_book(request):
+    # logic to add a book
+    pass
+
+@permission_required('relationship_app.can_change_book')
+def edit_book(request, pk):
+    # logic to edit a book
+    pass
+
+@permission_required('relationship_app.can_delete_book')
+def delete_book(request, pk):
+    # logic to delete a book
+    pass
+
+
 
